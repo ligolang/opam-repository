@@ -1,0 +1,47 @@
+opam-version: "2.0"
+maintainer: "contact@tezos.com"
+authors: ["Tezos devteam"]
+homepage: "https://www.tezos.com/"
+bug-reports: "https://gitlab.com/tezos/tezos/issues"
+dev-repo: "git+https://gitlab.com/tezos/tezos.git"
+license: "MIT"
+depends: [
+  "dune" { >= "3.0" }
+  "ocaml" { >= "4.14" }
+  "tezos-base" { = version }
+  "tezos-stdlib" { = version }
+  "tezos-client-base" { = version }
+  "tezos-rpc-http" { = version }
+  "tezos-rpc-http-client" { = version }
+  "tezos-signer-services" { = version }
+  "tezos-shell-services" { = version }
+  "uri" { >= "3.1.0" }
+  "ocplib-endian"
+  "fmt" { >= "0.8.7" }
+  "tezos-clic" { = version }
+  "tezos-stdlib-unix" { = version }
+  "tz-rpc-h-c-ux" { = version }
+  "tezt" { with-test & >= "3.1.0" }
+  "tezos-error-monad" { with-test & = version }
+  "tezos-crypto" { with-test & = version }
+  "octez-alcotezt" { with-test & = version }
+]
+depopts: [
+  "ledgerwallet-tezos"
+]
+conflicts: [
+  "ledgerwallet-tezos" { < "0.3.0" }
+]
+build: [
+  ["rm" "-r" "vendors"]
+  ["dune" "build" "-p" name "-j" jobs]
+  ["dune" "runtest" "-p" name "-j" jobs] {with-test}
+]
+synopsis: "Tezos: remote-signature backends for `tezos-client`"
+url {
+  src: "https://gitlab.com/ligolang/tezos-ligo/-/archive/v17.0-ligo/-17.0.tar.gz"
+  checksum: [
+    "sha256=5b39f7b90d5ee362054ffdf057bbfb47a90f0a2dd14e3c64deb7e18ffb8e6cd4"
+    "sha512=f29c7ea482b3dc4c9bd827e6fd85055361e070e3687e6ac34599a0b26c001897271c0540a2bc4e9947a9dea4b9e109ff92abcf868bec6af2967bcf46a3f41309"
+  ]
+}
