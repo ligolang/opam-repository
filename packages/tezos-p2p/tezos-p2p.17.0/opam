@@ -1,3 +1,5 @@
+# This file was automatically generated, do not edit.
+# Edit file manifest/main.ml instead.
 opam-version: "2.0"
 maintainer: "contact@tezos.com"
 authors: ["Tezos devteam"]
@@ -12,17 +14,17 @@ depends: [
   "lwt-canceler" { >= "0.3" & < "0.4" }
   "ringo" { >= "1.0.0" }
   "aches" { >= "1.0.0" }
-  "tezos-base" { = version }
-  "tezos-stdlib-unix" { = version }
-  "tezos-stdlib" { = version }
-  "tezos-p2p-services" { = version }
-  "tezos-version" { = version }
+  "tezos-base"
+  "tezos-stdlib-unix"
+  "tezos-stdlib"
+  "tezos-p2p-services"
+  "tezos-version"
   "prometheus" { >= "1.2" }
-  "tezos-test-helpers" { with-test & = version }
-  "tezos-base-test-helpers" { with-test & = version }
-  "tezos-event-logging-test-helpers" { with-test & = version }
-  "tezt-tezos" { with-test & = version }
-  "octez-alcotezt" { with-test & = version }
+  "tezos-test-helpers" {with-test}
+  "tezos-base-test-helpers" {with-test}
+  "tezos-event-logging-test-helpers" {with-test}
+  "tezt-tezos" {with-test}
+  "octez-alcotezt" {with-test}
   "astring" {with-test}
   "tezt" { with-test & >= "3.1.0" }
 ]
@@ -33,7 +35,7 @@ build: [
 ]
 synopsis: "Tezos: library for a pool of P2P connections"
 url {
-  src: "https://gitlab.com/ligolang/tezos-ligo/-/archive/v17.0-ligo/-17.0.tar.gz"
+  src: "https://gitlab.com/ligolang/tezos-ligo/-/archive/v17.0-ligo/tezos-ligo-17.0.tar.gz"
   checksum: [
     "sha256=5b39f7b90d5ee362054ffdf057bbfb47a90f0a2dd14e3c64deb7e18ffb8e6cd4"
     "sha512=f29c7ea482b3dc4c9bd827e6fd85055361e070e3687e6ac34599a0b26c001897271c0540a2bc4e9947a9dea4b9e109ff92abcf868bec6af2967bcf46a3f41309"
